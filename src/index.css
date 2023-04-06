@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.my-container {
+  @apply w-4/5 mx-auto mt-11;
+}
+
+.badge {
+  @apply text-sm bg-amber-400 inline px-3 rounded-xl;
+}

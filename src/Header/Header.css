@@ -1,0 +1,10 @@
+.page-links > * {
+  transition: 0.4s;
+}
+
+.page-links:hover > .link {
+  opacity: 0.3;
+}
+.page-links:hover > .link:hover {
+  opacity: 1;
+}
