@@ -6,7 +6,7 @@ const Book = ({ book }) => {
 
   return (
     <Link to={`../book/${isbn13}`}>
-      <div className=" relative rounded transition duration-500  hover:-translate-y-1 cursor-pointer">
+      <div className=" relative rounded transition duration-500  hover:-translate-y-1 cursor-pointer drop-shadow-xl">
         <img className="object-cover mx-auto" src={image} alt="" />
 
         <div className="flex flex-col bg-black bg-opacity-80 text-white p-3 absolute inset-0 rounded transition duration-500 opacity-0 hover:opacity-100">

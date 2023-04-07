@@ -6,14 +6,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-gray-100 h-16 w-full lg:w-4/5 mx-auto px-6 flex items-center justify-between">
+    <div className="bg-gray-100 h-16 w-full lg:w-4/5 mx-auto px-6 flex items-center justify-between relative">
       <Link to={"/"}>
         <div className="text-3xl font-bold text-blue-500">
           N
@@ -24,15 +24,27 @@ const Header = () => {
         </div>
       </Link>
       <div className="page-links font-bold lg:space-x-10  text-gray-600 hidden lg:block">
-        <Link className="link" to={"/"}>
+        <NavLink
+          className={`link ${({ isActive }) =>
+            isActive ? "active" : "default"}`}
+          to={"/"}
+        >
           HOME
-        </Link>
-        <Link className="link" to={"/books"}>
+        </NavLink>
+        <NavLink
+          className={`link ${({ isActive }) =>
+            isActive ? "active" : "default"}`}
+          to={"/books"}
+        >
           BOOKS
-        </Link>
-        <Link className="link" to={"/about"}>
+        </NavLink>
+        <NavLink
+          className={`link ${({ isActive }) =>
+            isActive ? "active" : "default"}`}
+          to={"/about"}
+        >
           ABOUT
-        </Link>
+        </NavLink>
       </div>
       <div className="lg:hidden z-30 transition-all duration-1000">
         {!isOpen ? (
@@ -55,24 +67,37 @@ const Header = () => {
       </div>
 
       {/* mobile nav bar section */}
+
       <div
-        className={`page-links font-bold lg:space-x-10  text-gray-600 flex flex-col space-y-4 lg:hidden border-2 p-20 transition-all duration-700 ${
+        className={`page-links font-bold lg:space-x-10 drop-shadow-lg text-gray-600 flex flex-col space-y-4 lg:hidden py-28 px-24 transition-all duration-700 ${
           isOpen
             ? "absolute top-0 right-0 z-20"
             : "absolute top-0 -right-96 z-20"
         }  bg-white`}
       >
-        <Link className="link" to={"/"}>
+        <NavLink
+          className={`link ${({ isActive }) =>
+            isActive ? "active" : "default"}`}
+          to={"/"}
+        >
           HOME
-        </Link>
+        </NavLink>
 
-        <Link className="link" to={"/books"}>
+        <NavLink
+          className={`link ${({ isActive }) =>
+            isActive ? "active" : "default"}`}
+          to={"/books"}
+        >
           BOOKS
-        </Link>
+        </NavLink>
 
-        <Link className="link" to={"/about"}>
+        <NavLink
+          className={`link ${({ isActive }) =>
+            isActive ? "active" : "default"}`}
+          to={"/about"}
+        >
           ABOUT
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

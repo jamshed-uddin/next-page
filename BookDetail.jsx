@@ -10,7 +10,7 @@ const BookDetail = () => {
 
   return (
     <>
-      <div className="my-container ">
+      <div className="my-container">
         <div>
           <img className="mx-auto" src={image} alt="" />
         </div>
